@@ -32,3 +32,13 @@ Develop SQL based analytics to deliver detailed insights into:
 The analytical and reporting services empower stakeholders with key metrics and hence make strategic decision
  
 --- 
+
+## Licensing 
+
+This project is licensed under the [MIT License].(LICENSE)
+
+## About Me
+
+Hi there! I am Jose. I am a data & analytical specialist with a passion to use the power of data to change the world, one step at a time.
+
+
