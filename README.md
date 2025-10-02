@@ -31,7 +31,7 @@ Develop SQL based analytics to deliver detailed insights into:
 
 The analytical and reporting services empower stakeholders with key metrics and hence make strategic decision
 
-![Initial Data Architecture Plan](https://github.com/user-attachments/assets/0752358b-9c25-49fe-9e4f-1bd3c88e34ca)
+<img width="1081" height="623" alt="Initial Data Architecture Plan" src="https://github.com/user-attachments/assets/0d85b4bb-4c3d-421e-9b34-48537bcb322f" />
 
  
 --- 
