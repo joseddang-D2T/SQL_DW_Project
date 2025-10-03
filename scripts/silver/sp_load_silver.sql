@@ -88,7 +88,9 @@ BEGIN
 		) 
 		SELECT 
 			 [prd_id]
-			  , REPLACE(LEFT(prd_key,5),'-','_') as cat_id
+			  , CASE WHEN REPLACE(LEFT(prd_key,5),'-','_')  in ('CO_PE','CO_PD') THEN 'CO_PD' -- Correction to match ERP Category code
+					ELSE REPLACE(LEFT(prd_key,5),'-','_')
+				END as cat_id
 			  , TRIM(SUBSTRING(prd_key,7,LEN(prd_key))) as prd_key
 			  , [prd_nm]
 			  , ISNULL([prd_cost], 0) as prd_cost
@@ -97,7 +99,8 @@ BEGIN
 					 WHEN 'M' THEN 'Mountain'
 					 WHEN 'R' THEN 'Road'
 					 WHEN 'T' THEN 'Touring'
-					 ELSE 'n/a' END as prd_line
+					 ELSE 'n/a' 
+				END as prd_line
 			  , CAST([prd_start_dt] AS DATE) as prd_start_dt
 			  , DATEADD(day,-1,LEAD(prd_start_dt) OVER (PARTITION BY prd_key ORDER BY prd_start_dt)) as prd_end_dt
 		FROM bronze.crm_prd_info
