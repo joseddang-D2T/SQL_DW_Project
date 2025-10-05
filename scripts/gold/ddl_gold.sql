@@ -84,8 +84,8 @@ select
 	, dc.CUSTOMER_KEY
 	, dp.PRODUCT_KEY 
 	, sls_quantity as QUANTITY
-	, CAST(sls_price AS DECIMAL(10,2)) / 100 as UNIT_PRICE
-	, CAST(sls_sales AS DECIMAL(10,2)) / 100 as SALE_VALUE
+	, CAST(sls_price AS DECIMAL(10,2)) as UNIT_PRICE -- Removing dollar conversion 
+	, CAST(sls_sales AS DECIMAL(10,2)) as SALE_VALUE -- Removing dollar conversion 
 from silver.crm_sales_details sd
 LEFT JOIN gold.D_PRODUCTS_V dp
 ON sd.sls_prd_key = dp.PRODUCT_NUMBER
